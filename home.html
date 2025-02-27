@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added for mobile responsiveness -->
+    <title>C-Fee Statement | Cleaning Systems</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f4f7f8, #e9ecef);
+            margin: 0;
+            padding: 10px; /* Reduced padding for mobile */
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px; /* Reduced from 40px for mobile */
+            border-radius: 8px; /* Slightly reduced for mobile */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Lighter shadow for mobile */
+            width: 100%; /* Full width on mobile */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px; /* Reduced for mobile */
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px; /* Reduced for mobile */
+            flex-direction: column; /* Stack on mobile */
+            text-align: center; /* Center align on mobile */
+        }
+        .logo img {
+            max-width: 150px; /* Reduced from 220px for mobile */
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            margin-bottom: 10px; /* Add spacing below logo on mobile */
+        }
+        h1 {
+            font-size: 22px; /* Reduced from 28px for mobile */
+            color: #2c3e50;
+            margin: 0;
+        }
+        section {
+            margin-bottom: 20px; /* Reduced from 40px for mobile */
+        }
+        h2, h3 {
+            margin: 0 0 10px 0; /* Reduced from 15px for mobile */
+            font-weight: 600;
+            color: #34495e;
+        }
+        h2 {
+            font-size: 18px; /* Reduced from 24px for mobile */
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 16px; /* Reduced from 20px for mobile */
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 10px; /* Reduced from 20px for mobile */
+        }
+        th, td {
+            padding: 10px; /* Reduced from 15px for mobile */
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        td {
+            background-color: #ffffff;
+        }
+        .highlight {
+            background-color: #f1f9ff;
+            font-weight: 600;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px; /* Reduced from 10px for mobile */
+            margin: 3px 0; /* Reduced from 5px for mobile */
+            box-sizing: border-box;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px; /* Reduced from 6px for mobile */
+            font-size: 14px; /* Reduced from 16px for mobile */
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Reduced from 15px for mobile */
+            margin-bottom: 15px; /* Reduced from 30px for mobile */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        button {
+            padding: 10px 20px; /* Reduced from 12px 25px for mobile */
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Reduced from 6px for mobile */
+            cursor: pointer;
+            font-size: 14px; /* Reduced from 16px for mobile */
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .payment-option {
+            background-color: #F5F5F5;
+            padding: 15px; /* Reduced from 20px for mobile */
+            border-radius: 6px; /* Reduced from 8px for mobile */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Lighter shadow for mobile */
+            margin-bottom: 15px; /* Reduced from 30px for mobile */
+            page-break-inside: avoid;
+        }
+        .most-common {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: -5px; /* Reduced from -10px for mobile */
+            margin-bottom: 5px; /* Reduced from 15px for mobile */
+            font-size: 12px; /* Reduced for mobile */
+        }
+
+        /* Media queries for tablet and desktop (optional, to refine desktop behavior) */
+        @media screen and (min-width: 768px) {
+            .container {
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            header {
+                flex-direction: row; /* Restore row layout on desktop */
+                text-align: left; /* Restore left alignment on desktop */
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+            .logo img {
+                max-width: 220px;
+                margin-bottom: 0; /* Remove mobile spacing on desktop */
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            th, td {
+                padding: 15px;
+                font-size: 16px;
+            }
+            input[type="text"], input[type="number"] {
+                padding: 10px;
+                margin: 5px 0;
+                border-radius: 6px;
+                font-size: 16px;
+            }
+            .actions {
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+            button {
+                padding: 12px 25px;
+                font-size: 16px;
+                border-radius: 6px;
+            }
+            .payment-option {
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+                margin-bottom: 30px;
+            }
+            .most-common {
+                margin-top: -10px;
+                margin-bottom: 15px;
+                font-size: 16px;
+            }
+        }
+
+        @media print {
+            .actions {
+                display: none;
+            }
+            .container {
+                width: 100%;
+                max-width: 780px; /* Slightly less than A4 width (794px) to prevent overflow */
+                padding: 15px; /* Reduced to save space */
+                margin: 0 auto;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Lighter shadow */
+                border-radius: 8px;
+                overflow: hidden; /* Prevent content from spilling over */
+            }
+            header {
+                border-bottom: 2px solid #e0e0e0;
+                padding-bottom: 8px; /* Slightly reduced */
+                margin-bottom: 5px; /* Reduced spacing */
+                overflow-wrap: break-word; /* Handle long text */
+                flex-direction: row; /* Retain web layout */
+                justify-content: space-between; /* Retain web alignment */
+            }
+            .logo img {
+                max-width: 160px; /* Further reduced to save space */
+                height: auto;
+                overflow-wrap: break-word;
+            }
+            h1 {
+                font-size: 22px; /* Reduced for print */
+                color: #2c3e50;
+                margin: 0;
+                overflow-wrap: break-word;
+            }
+            h2, h3 {
+                font-size: 16px; /* Reduced for print */
+                margin: 0 0 8px 0; /* Reduced */
+                font-weight: 600;
+                color: #34495e;
+                overflow-wrap: break-word;
+            }
+            h2 {
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 4px; /* Reduced */
+            }
+            section {
+                margin-bottom: 15px; /* Reduced */
+                overflow-wrap: break-word;
+            }
+            table {
+                margin-top: 8px; /* Reduced */
+                overflow-wrap: break-word;
+            }
+            th, td {
+                padding: 8px; /* Reduced */
+                font-size: 12px; /* Reduced for print */
+                overflow-wrap: break-word;
+            }
+            input[type="text"], input[type="number"] {
+                display: block;
+                width: 100%;
+                padding: 6px; /* Reduced */
+                margin: 2px 0; /* Reduced */
+                box-sizing: border-box;
+                border: 1px solid #bdc3c7;
+                border-radius: 4px; /* Reduced */
+                font-size: 12px; /* Reduced for print */
+                overflow-wrap: break-word;
+            }
+            .payment-option {
+                background-color: #F5F5F5; /* Retain gray background */
+                padding: 12px; /* Reduced */
+                border-radius: 5px; /* Reduced */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Lighter shadow */
+                margin-bottom: 12px; /* Reduced */
+                page-break-inside: avoid;
+                overflow: hidden; /* Prevent content from spilling over */
+            }
+            .most-common {
+                font-style: italic;
+                color: #7f8c8d;
+                margin-top: -4px; /* Reduced */
+                margin-bottom: 4px; /* Reduced */
+                font-size: 10px; /* Reduced for print */
+                overflow-wrap: break-word;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 2mm; /* Maintain minimal margin */
+            }
+        }
+    </style>
+    <!-- Include html2canvas and jsPDF libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <!-- Replace with actual Cleaning Systems logo -->
+                <img src="https://cdn-ilafcfb.nitrocdn.com/KEhcwwSaSxLtwUeasrlkkKIKKhAgEOob/assets/images/optimized/rev-16fc74f/anagocleaning.com/wp-content/uploads/2023/09/anagologo2-300x181.png" alt="Cleaning Systems Logo">
+            </div>
+            <h1>C-Fee Calculator</h1>
+        </header>
+
+        <!-- Account Information Section -->
+        <section class="client-info">
+            <h2>Account Information:</h2>
+            <form>
+                <label for="Account-name">Account Name:</label>
+                <input type="text" id="client-name" name="client-name" value="Account Name">
+                
+                <label for="Monthly Account Amount">Monthly Account Amount:</label>
+                <input type="number" id="cfee-applied" name="cfee-applied" step="0.01" value="0.00">
+
+                <label for="cfi-factor">CFI Factor:</label>
+                <input type="number" id="cfi-factor" name="cfi-factor" value="0.0" step="0.01">
+                
+            </form>
+        </section>
+
+        <!-- Actions Section: Calculate, Print, and Download Buttons -->
+        <section class="actions">
+            <button id="calculate-btn">Calculate Payment Options</button>
+            <button id="print-btn">Print</button>
+            <button id="download-btn">Download</button>
+        </section>
+
+        <!-- Cash Payment Section -->
+        <section class="payment-option">
+            <h3>Cash Payment</h3>
+            <table>
+                <tr>
+                    <th>C-fee Amount (<span id="cfi-factor-cash">3.20</span> x $<span id="cfee-applied-cash">5,000.00</span>)</th>
+                    <td id="cfee-amount-cash">$16,000.00</td>
+                </tr>
+                <tr>
+                    <th>Cash Discount (15%)</th>
+                    <td id="cash-discount">($2,400.00)</td>
+                </tr>
+                <tr class="highlight">
+                    <th>Total Due</th>
+                    <td id="total-due-cash">$13,600.00</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 120 Days No Interest Section -->
+        <section class="payment-option">
+            <h3>120 Days No Interest</h3>
+            <table>
+                <tr>
+                    <th>C-fee Amount (<span id="cfi-factor-120">3.20</span> x $<span id="cfee-applied-120">5,000.00</span>)</th>
+                    <td id="cfee-amount-120">$16,000.00</td>
+                </tr>
+                <tr>
+                    <th>Payment Amount (4 months)</th>
+                    <td id="payment-amount-120">$4,000.00</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Financed (12 Months) Section -->
+        <section class="payment-option">
+            <h3>Financed (12 Months)</h3>
+            <p class="most-common">Most Common Option</p>
+            <table>
+                <tr>
+                    <th>C-fee Amount (<span id="cfi-factor-financed">3.20</span> x $<span id="cfee-applied-financed">5,000.00</span>)</th>
+                    <td id="cfee-amount-financed">$16,000.00</td>
+                </tr>
+                <tr>
+                    <th>12% Interest</th>
+                    <td id="interest">$1,920.00</td>
+                </tr>
+                <tr>
+                    <th>Financed Total</th>
+                    <td id="financed-total">$17,920.00</td>
+                </tr>
+                <tr>
+                    <th>Monthly Payment (12 months)</th>
+                    <td id="monthly-payment-financed">$1,493.33</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+    <!-- JavaScript for Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const { jsPDF } = window.jspdf;
+
+            const calculateBtn = document.getElementById('calculate-btn');
+            const printBtn = document.getElementById('print-btn');
+            const downloadBtn = document.getElementById('download-btn');
+
+            // Calculate button functionality
+            calculateBtn.addEventListener('click', updateCalculations);
+
+            // Print button functionality
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+
+            // Download button functionality
+            downloadBtn.addEventListener('click', () => {
+                // Temporarily apply web page styles to match the print output
+                const container = document.querySelector('.container');
+                const originalStyles = [];
+
+                // Store original styles and apply styles to match the web page
+                const elements = container.querySelectorAll('*');
+                elements.forEach(element => {
+                    const computedStyle = window.getComputedStyle(element);
+                    originalStyles.push({
+                        element: element,
+                        styles: {
+                            backgroundColor: computedStyle.backgroundColor,
+                            color: computedStyle.color,
+                            border: computedStyle.border,
+                            boxShadow: computedStyle.boxShadow,
+                            padding: computedStyle.padding,
+                            margin: computedStyle.margin,
+                            borderRadius: computedStyle.borderRadius,
+                            display: computedStyle.display
+                        }
+                    });
+
+                    // Apply web page styles (matching the default styles, not print)
+                    if (element.classList.contains('actions')) {
+                        element.style.display = 'flex';
+                    } else if (element.classList.contains('payment-option')) {
+                        element.style.backgroundColor = '#F5F5F5';
+                        element.style.color = 'black';
+                        element.style.border = 'none';
+                        element.style.boxShadow = '0 4px 10px rgba(0,0,0,0.05)';
+                        element.style.padding = '20px';
+                        element.style.marginBottom = '30px';
+                        element.style.borderRadius = '8px';
+                    } else if (element.classList.contains('highlight')) {
+                        element.style.backgroundColor = '#f1f9ff';
+                    } else if (element.tagName === 'H1') {
+                        element.style.fontSize = '28px';
+                        element.style.color = '#2c3e50';
+                    } else if (element.tagName === 'H2' || element.tagName === 'H3') {
+                        element.style.fontSize = '20px';
+                        element.style.margin = '0 0 15px 0';
+                        element.style.fontWeight = '600';
+                        element.style.color = '#34495e';
+                    } else if (element.tagName === 'TABLE' || element.tagName === 'TD' || element.tagName === 'TH') {
+                        element.style.padding = '15px';
+                        element.style.fontSize = '16px';
+                    } else if (element.querySelector('img')) {
+                        element.style.maxWidth = '220px';
+                    } else {
+                        element.style.backgroundColor = '#ffffff';
+                        element.style.color = '#000000';
+                        element.style.border = 'none';
+                        element.style.boxShadow = 'none';
+                        element.style.padding = '0';
+                        element.style.margin = '0';
+                        element.style.borderRadius = '0';
+                    }
+                });
+
+                // Show inputs and other web page elements
+                document.querySelectorAll('input[type="text"], input[type="number"]').forEach(input => {
+                    input.style.display = 'block';
+                });
+                document.querySelectorAll('.most-common').forEach(p => {
+                    p.style.display = 'block';
+                });
+
+                html2canvas(container, {
+                    backgroundColor: null, // Prevent capturing unintended backgrounds
+                    scale: 1, // Ensure proper scaling
+                    useCORS: true, // Handle external images (like the logo) correctly
+                    ignoreElements: (element) => element.classList.contains('actions') // Ignore action buttons for PDF
+                }).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const pdf = new jsPDF({
+                        orientation: 'portrait',
+                        unit: 'mm',
+                        format: 'a4'
+                    });
+
+                    const width = 210; // A4 width in mm
+                    const height = (canvas.height * width) / canvas.width; // Maintain aspect ratio
+
+                    // Ensure the content fits on one page by scaling if necessary
+                    if (height > 297) { // A4 height in mm
+                        const scale = 297 / height;
+                        pdf.addImage(imgData, 'PNG', 0, 0, width * scale, 297);
+                    } else {
+                        pdf.addImage(imgData, 'PNG', 0, 0, width, height);
+                    }
+                    pdf.save('C-Fee_Statement.pdf');
+
+                    // Restore original styles after PDF generation
+                    originalStyles.forEach(item => {
+                        const { element, styles } = item;
+                        element.style.backgroundColor = styles.backgroundColor;
+                        element.style.color = styles.color;
+                        element.style.border = styles.border;
+                        element.style.boxShadow = styles.boxShadow;
+                        element.style.padding = styles.padding;
+                        element.style.margin = styles.margin;
+                        element.style.borderRadius = styles.borderRadius;
+                        element.style.display = styles.display;
+                    });
+                });
+            });
+
+            function updateCalculations() {
+                const cfiFactorInput = document.getElementById('cfi-factor');
+                const cfeeAppliedInput = document.getElementById('cfee-applied');
+                const cfiFactor = parseFloat(cfiFactorInput.value) || 0;
+                const cfeeApplied = parseFloat(cfeeAppliedInput.value) || 0;
+
+                const formatNumber = (num) => num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                // Update CFI factor and C-fee Applied Amount displays
+                document.getElementById('cfi-factor-cash').textContent = cfiFactor.toFixed(2);
+                document.getElementById('cfee-applied-cash').textContent = formatNumber(cfeeApplied);
+                document.getElementById('cfi-factor-120').textContent = cfiFactor.toFixed(2);
+                document.getElementById('cfee-applied-120').textContent = formatNumber(cfeeApplied);
+                document.getElementById('cfi-factor-financed').textContent = cfiFactor.toFixed(2);
+                document.getElementById('cfee-applied-financed').textContent = formatNumber(cfeeApplied);
+
+                // Cash Payment calculations
+                const cfeeAmountCash = cfiFactor * cfeeApplied;
+                const cashDiscount = 0.15 * cfeeAmountCash;
+                const totalDueCash = cfeeAmountCash - cashDiscount;
+                document.getElementById('cfee-amount-cash').textContent = `$${formatNumber(cfeeAmountCash)}`;
+                document.getElementById('cash-discount').textContent = `($${formatNumber(cashDiscount)})`;
+                document.getElementById('total-due-cash').textContent = `$${formatNumber(totalDueCash)}`;
+
+                // 120 Days No Interest calculations
+                const cfeeAmount120 = cfiFactor * cfeeApplied;
+                const paymentAmount120 = cfeeAmount120 / 4;
+                document.getElementById('cfee-amount-120').textContent = `$${formatNumber(cfeeAmount120)}`;
+                document.getElementById('payment-amount-120').textContent = `$${formatNumber(paymentAmount120)}`;
+
+                // Financed (12 Months) calculations
+                const cfeeAmountFinanced = cfiFactor * cfeeApplied;
+                const interest = 0.12 * cfeeAmountFinanced;
+                const financedTotal = cfeeAmountFinanced + interest;
+                const monthlyPaymentFinanced = financedTotal / 12;
+                document.getElementById('cfee-amount-financed').textContent = `$${formatNumber(cfeeAmountFinanced)}`;
+                document.getElementById('interest').textContent = `$${formatNumber(interest)}`;
+                document.getElementById('financed-total').textContent = `$${formatNumber(financedTotal)}`;
+                document.getElementById('monthly-payment-financed').textContent = `$${formatNumber(monthlyPaymentFinanced)}`;
+            }
+
+            // Initial calculation on page load
+            updateCalculations();
+        });
+    </script>
+</body>
+</html>
